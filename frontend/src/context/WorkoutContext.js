@@ -1,5 +1,4 @@
-import { Action } from "history";
-import { Children, createContext, useReducer } from "react";
+import { createContext, useReducer } from "react";
 
 export const WorkoutsContext = createContext();
 
@@ -12,6 +11,8 @@ export const workoutsReducer = (state, action) =>{
             }
 
         case 'CREATE_WORKOUT':
+            console.log("aqui o dentro co case, o o workout",state.workouts)
+
             return {
                 workouts: [action.payload, ...state.workouts]
             }
@@ -32,7 +33,7 @@ export const WorkoutsContextProvider = ({children}) =>{
   //  dispatch({type: 'SET_WORKOUT', payload:[{},{}]})
 
     return (
-        <WorkoutsContext.Provider value={{state, dispatch}} >
+        <WorkoutsContext.Provider value={{...state, dispatch}} >
             { children }
         </WorkoutsContext.Provider>
     )
