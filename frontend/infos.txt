@@ -6,3 +6,13 @@ npm install react-router-dom
 
 
 npm install date fns 
+
+
+auth:
+npm install bcrypt
+
+backend
+install validators :
+npm install validator
+
+npm install jsonwebtoken 
